@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Score : MonoBehaviour
+//neg score counter
+public class NegScore : MonoBehaviour
 {
     int score = 0;
     int multiplier = 1;
@@ -12,19 +13,20 @@ public class Score : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
-        // Update is called once per frame
+
+    // Update is called once per frame
     public void FixedUpdate()
     {
-        // I need to name my 2nd text object through here...;(
         this.GetComponent<TMPro.TextMeshPro>().text = score.ToString();
-        multipliertext.text = "x"+multiplier.ToString();
+        multipliertext.text = "x" + multiplier.ToString();
     }
 
     public void AddScore(int points)
     {
-        score = score + points*multiplier;
+        //changed + to -
+        score = score - points * multiplier;
     }
 
     public void Addmultiplier(int multiplierpoints)

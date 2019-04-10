@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Score : MonoBehaviour
+public class Store : MonoBehaviour
 {
-    int score = 0;
+    int store = 0;
     int multiplier = 1;
 
     public TMPro.TextMeshPro multipliertext;
@@ -12,19 +12,19 @@ public class Score : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
-        // Update is called once per frame
+
+    // Update is called once per frame
     public void FixedUpdate()
     {
-        // I need to name my 2nd text object through here...;(
-        this.GetComponent<TMPro.TextMeshPro>().text = score.ToString();
-        multipliertext.text = "x"+multiplier.ToString();
+        this.GetComponent<TMPro.TextMeshPro>().text = store.ToString();
+        multipliertext.text = "x" + multiplier.ToString();
     }
 
     public void AddScore(int points)
     {
-        score = score + points*multiplier;
+        store = store + points * multiplier;
     }
 
     public void Addmultiplier(int multiplierpoints)
@@ -34,7 +34,7 @@ public class Score : MonoBehaviour
 
     public void ResetScore()
     {
-        score = 0;
+        store = 0;
     }
 
     public void ResetMultiplier()
